@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FloatField">
+    <output-path>$PROJECT_DIR$/out/artifacts/FloatField</output-path>
+    <root id="archive" name="FloatField.jar">
+      <element id="module-output" name="Component" />
+    </root>
+  </artifact>
+</component>

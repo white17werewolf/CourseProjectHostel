@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import Control.FloatField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainClientController">
+    <children>
+
+        <TextArea fx:id="rez" editable="false" layoutX="380.0" layoutY="340.0" prefHeight="40.0" prefWidth="365.0" promptText="Здесь будут отображаться результат действий или сообщения об ошибках" wrapText="true" />
+        <Label layoutX="250.0" layoutY="340.0" prefHeight="37.0" prefWidth="120.0" text="Итог действия">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <VBox layoutX="60.0" layoutY="24.0" spacing="5.0">
+            <children>
+                <TextField fx:id="FIO_add" prefHeight="25.0" prefWidth="173.0" promptText="ФИО" />
+                <TextField fx:id="pas_add" prefHeight="25.0" prefWidth="79.0" promptText="Паспорт" />
+                <TextField fx:id="day_add" prefHeight="25.0" prefWidth="79.0" promptText="Номер" />
+                <TextField fx:id="room_add" prefHeight="25.0" prefWidth="79.0" promptText="Дни" />
+                <FloatField fx:id="pr_add" prefHeight="25.0" prefWidth="120.0" promptText="Цена" />
+            </children>
+        </VBox>
+
+        <VBox layoutX="9.0" layoutY="28.0" prefWidth="67.0" spacing="12.0">
+            <children>
+                <Label text="ФИО" />
+                <Label text="Паспорт" />
+                <Label text="Дни" />
+                <Label text="Номер" />
+                <Label text="Цена" />
+
+            </children>
+        </VBox>
+        <Separator layoutX="240.0" layoutY="0" orientation="VERTICAL" prefHeight="400.0" prefWidth="7.0" />
+        <TableView fx:id="table" editable="true" layoutX="250.0" layoutY="24.0" prefHeight="294.0" prefWidth="500.0">
+            <columns>
+                <TableColumn fx:id="FIOColumn" prefWidth="180.0" text="ФИО" />
+                <TableColumn fx:id="pasColumn" prefWidth="120.0" text="Паспорт" />
+                <TableColumn fx:id="dayColumn" prefWidth="60.0" text="Дни" />
+                <TableColumn fx:id="numColumn" prefWidth="60.0" text="Номер" />
+                <TableColumn fx:id="priceColumn" prefWidth="80.0" text="Цена" />
+
+            </columns>
+        </TableView>
+        <Separator layoutX="0" layoutY="210.0" orientation="HORIZONTAL" prefHeight="7.0" prefWidth="243.0" />
+        <Button fx:id="addEmpBtn" layoutX="9.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleAdd2" prefHeight="25.0" prefWidth="224.0" text="Заселить  нового гостя" />
+    <VBox layoutX="9.0" layoutY="220" prefHeight="130.0" prefWidth="224.0" spacing="10.0">
+        <children>
+            <Button layoutX="175.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleDel" prefHeight="25.0" prefWidth="224.0" text="Выселить постояльца" />
+            <Button layoutX="261.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleChange" prefHeight="25.0" prefWidth="224.0" text="Персонализация данных" />
+            <Button layoutX="334.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleLoad" prefHeight="25.0" prefWidth="224.0" text="Загрузить данные" />
+            <Button layoutX="261.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="25.0" prefWidth="224.0" text="Сохранить данные" />
+
+            <Button fx:id="searchEmpsBtn" layoutX="411.0" layoutY="24.0" mnemonicParsing="false" onAction="#handlePrint" prefHeight="25.0" prefWidth="224.0" text="Вывести на печать" />
+        </children>
+    </VBox>
+    </children>
+</AnchorPane>
